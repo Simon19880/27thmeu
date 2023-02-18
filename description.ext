@@ -1,0 +1,84 @@
+﻿// ======================== Ladebildschirm ==========================
+author			= "[27thMEU] 2ndLt Pierce";
+onLoadName		= "Operation Harvest Red";
+onLoadMission	= "Eine Interpretation der ArmA 2 Kampagne";
+//loadScreen	= "images\loadScreen.paa";
+onLoadIntro 	= "MEU- Edition Operation Harvest Red";
+briefingName 	= "Harvest Red - Test02";
+// ======================== Missionsheader ==========================
+class Header
+{
+	gameType =  tdm;
+	minPlayers =  1;
+	maxPlayers = 80;
+};
+// ======================== Respawnoptionen =========================
+respawn = "BASE";
+respawnDelay = 15;
+respawnOnStart = -1;
+disabledAI = 1;
+respawnTemplate[] = {"ace_spectator"};
+
+// ======================== Initialisierungen =======================
+class CfgFunctions {
+   #include "modules\grad-persistence\cfgFunctions.hpp"
+};
+
+// ======================== Menü Einstellungen ======================
+
+// ========================== Persistence ===========================
+
+class CfgGradPersistence {
+    missionTag = "meu_hr_test";
+    loadOnMissionStart = 0;
+    missionWaitCondition = "true";
+    playerWaitCondition = "true";
+
+    saveUnits = 2;
+    saveVehicles = 2;
+    saveContainers = 2;
+    saveStatics = 2;
+    saveGradFortificationsStatics = 0;
+    saveMarkers = 2;
+    saveTasks = 2;
+    saveTriggers = 2;
+
+    savePlayerInventory = 1;
+    savePlayerDamage = 1;
+    savePlayerPosition = 1;
+    savePlayerMoney = 0;
+
+    saveTeamAccounts = 0;
+
+    blacklist[] = {
+        "",
+        ""
+    };
+};
+// ========================== Fortifications ========================
+
+// ========================== Missionsparameter =====================
+
+// ========================== Missionsende ==========================
+
+class CfgDebriefing
+{  
+	class blufor_win
+	{
+		title = "Das USMC hat Gewonnen!";
+		subtitle = "Der russische Kommandeur wurde getötet";
+		description = "Der Kommandeur der Russischen-Streitkräfte auf Chernarus, wurde Heute während eines Gefechtses getötet, diese Meldung wurde von einem unabhängigen Zeugen an ANN-Network übermittelt.";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = { 0.0, 0.3, 0.6, 1 };
+	};
+	class blufor_lose
+	{
+		title = "Das USMC hat Verloren!";
+		subtitle = "Der amerikanische Kommandeur wurde getötet";
+		description = "Der Kommandeur der US-Streitkräfte auf Chernarus, wurde Heute während eines Gefechtses getötet, diese Meldung wurde von einem unabhängigen Zeugen an ANN-Network übermittelt.";
+		pictureBackground = "";
+		picture = "o_inf";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+};
